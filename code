@@ -1,0 +1,56 @@
+import time
+import random
+
+print("""
+*****************************
+      PLAY RANDOM NUMBERS
+*****************************""")
+time.sleep(3)
+
+hak = (7)
+
+sayı = random.randint(1,100)
+
+
+
+print("""
+**********************************
+* Sayılar 1 ve 100 arasındadır!  *                        
+* Oyunda 7 hakkınız vardır       *
+*     Powered By. Kerem          *
+**********************************""")
+
+while True:
+    tahmin = int(input("Tahmin yapınız :)"))
+    if(5 < hak <= 7):
+        skor = "süper şanslı"
+    elif( 3 < hak <= 5):
+        skor = "şanslı"
+    elif(0< hak <= 3 ):
+        skor = "acemi şansı"
+
+
+    if( tahmin == sayı):
+        print("Tebrikler kazandınız")
+        print("Oyun hakkınız skorunuzu oluşturur")
+        print ("Skorunuz:",skor)
+        time.sleep(3)
+        print("KEREM ÖZDEMİR TARAFINDAN YAPILDI!")
+        break
+    elif (tahmin < sayı):
+        print("Daha yüksek tahmin et!")
+        hak -= 1
+        print("Kalan hakkınız:", hak)
+
+    else:
+        print("Daha düşük tahmin et!")
+        hak -=1
+        print("Kalan hakkınız:", hak)
+
+    if( hak == 0):
+        print("Üzgünüm oyun sona erdi")
+        print("Tahmin hakkınız kalmadı")
+        print("Tahmin etmeniz gereken sayı {} idi".format(sayı))
+        time.sleep(3)
+        print("KEREM ÖZDEMİR TARAFINDAN YAPILDI!")
+        break
